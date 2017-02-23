@@ -1,0 +1,46 @@
+﻿@model RoleViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@Html.Partial("_AdminPageHeader", new AdminPageHeader() {
+    ControllerName = "RolesAdmin",
+    ControllerDescription = "Role Admin",
+    CurrentActionDescription = "Edit role " + @Model.Name
+})
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="ibox">
+        <div class="ibox-title">
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+                        <input type="submit" value="Save Role" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

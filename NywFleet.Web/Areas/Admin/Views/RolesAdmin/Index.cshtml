@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Html.Partial("_AdminPageHeader", new AdminPageHeader() {
+    ControllerName = "RolesAdmin",
+    ControllerDescription = "Role Admin",
+    CurrentActionDescription = "Role list"
+})
+
+
+    <div class="ibox ">
+        <div class="ibox-title min-height ">
+            <p class="text-right">
+                @Html.ActionLink("Create new role", "Create", null, new { @class = "btn btn-success" })
+            </p>
+
+            <table class="table table-bordered table-striped ">
+                <tr>
+                    <th>
+                        Role Name
+                    </th>
+                    <th>Actions</th>
+                </tr>
+
+                @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td style="width: 100px">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                        }
+
+            </table>
+
+        </div>
+    </div>
+

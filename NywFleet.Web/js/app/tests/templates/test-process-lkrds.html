@@ -1,0 +1,69 @@
+<section>
+    <div class="container">
+
+        <div class="alert alert-dismissible alert-danger  col-md-12" ng-show="vm.errors.length">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <div ng-repeat="err in vm.errors">
+                <strong>{{err.title}}</strong>
+                <span>{{err.message}}</span>
+            </div>
+        </div>
+        <div class="line-wrap col-md-12">
+            <a href="#" class='circle-link  reset-padding' style="width: 25px;" ng-class='{"circle-link-active":vm.currentStep>0}'>
+                <span class='circle-btn' style="left: -1px"></span><span class='circle-link-text'>Apostolic</span>
+            </a>
+
+      
+            <a href="#" class='circle-link  reset-padding' ng-class='{"circle-link-active":vm.currentStep>1}'>
+                <span class='circle-btn'></span><span class='circle-link-text'>Prophetic</span>
+            </a>
+            <a href="#" class='circle-link  reset-padding' ng-class='{"circle-link-active":vm.currentStep>2}'>
+                <span class='circle-btn'></span><span class='circle-link-text'>Evangelistic</span>
+            </a>
+            <a href="#" class='circle-link reset-padding' ng-class='{"circle-link-active":vm.currentStep>3}'>
+                <span class='circle-btn'></span><span class='circle-link-text'>Shepherd</span>
+            </a>
+            <a href="#" class='circle-link  reset-padding' ng-class='{"circle-link-active":vm.currentStep>4}'>
+                <span class='circle-btn'></span><span class='circle-link-text' >Teacher</span>
+            </a>
+            <a href="#" class='circle-link  reset-padding'>
+                <span class='circle-btn'></span><span class='circle-link-text'>Results</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h1 class='light-blue-header'>{{vm.pageInfo.currentCategory.displayName}}</h1>
+
+        <div ng-repeat="question in vm.pageInfo.questions">
+
+            <p class='default-parag'>
+                <strong>{{question.title}} </strong>
+                {{question.questionText}}
+            </p>
+
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-default" ng-click="vm.processAnswer(question,6)" ng-class="{'btn-active':question.answer==6}"><i class="material-icons">check_circle</i> Strongly Agree</a>
+                <a class="btn btn-default" ng-click="vm.processAnswer(question,5)" ng-class="{'btn-active':question.answer==5}"><i class="material-icons">check_circle</i> Agree</a>
+                <a class="btn btn-default" ng-click="vm.processAnswer(question,4)" ng-class="{'btn-active':question.answer==4}"><i class="material-icons">check_circle</i> Agree Somewhat</a>
+                <a class="btn btn-default" ng-click="vm.processAnswer(question,3)" ng-class="{'btn-active':question.answer==3}"><i class="material-icons">check_circle</i> Disagree Somewhat</a>
+                <a class="btn btn-default" ng-click="vm.processAnswer(question,2)" ng-class="{'btn-active':question.answer==2}"><i class="material-icons">check_circle</i> Disagree</a>
+                <a class="btn btn-default" ng-click="vm.processAnswer(question,1)" ng-class="{'btn-active':question.answer==1}"><i class="material-icons">check_circle</i> Strongly Disagree</a>
+            </div>
+            <hr class="divider-content"/>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p class='link-footer-next' ng-click="vm.submitPage()">
+            Next: <strong>{{vm.pageInfo.nextCategory.displayName}}</strong>
+            <img src="/images/link-next.png">
+        </p>
+    </div>
+</footer>
+
+

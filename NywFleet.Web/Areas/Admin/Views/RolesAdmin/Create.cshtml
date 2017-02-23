@@ -1,0 +1,45 @@
+﻿@model RoleViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+@Html.Partial("_AdminPageHeader", new AdminPageHeader()
+{
+    ControllerName = "RolesAdmin",
+    ControllerDescription = "Role Admin",
+    CurrentActionDescription = "Create new role"
+})
+
+<div class="ibox">
+    <div class="ibox-title">
+        <div class="row">
+            @using (Html.BeginForm()) {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Name">Role Name</label>
+
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+                            <input type="submit" value="Create Role" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

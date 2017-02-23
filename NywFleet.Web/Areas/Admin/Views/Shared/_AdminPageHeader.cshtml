@@ -1,0 +1,13 @@
+﻿@model AdminPageHeader
+
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Dashboard", "Index", "Dashboard")</li>
+    <li>@Html.ActionLink(@Model.ControllerDescription, "Index", Model.ControllerName)</li>
+    <li class="active">@Model.CurrentActionDescription</li>
+</ol>
+
+<div class="page-title">
+    <div class="container">
+        <h2>@Model.CurrentActionDescription</h2>
+    </div>
+</div>

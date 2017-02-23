@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ApplicationUser>
+
+@{
+    ViewBag.Title = "Users Manager";
+}
+
+@Html.Partial("_AdminPageHeader", new AdminPageHeader() {
+    ControllerName = "UsersAdmin",
+    ControllerDescription = "User Admin",
+    CurrentActionDescription = "Users"
+})
+
+
+<div class="ibox">
+    <div class="ibox-title min-height">
+        <p class="text-right">
+            @Html.ActionLink("Create new user", "Create", null, new { @class = "btn btn-success" })
+        </p>
+
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td style="width: 120px">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    </div>
+</div>
+
