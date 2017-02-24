@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NywFleet.Data;
 
 namespace NywFleet.Tests {
@@ -7,8 +8,8 @@ namespace NywFleet.Tests {
         [TestMethod]
         public void TestMethod1() {
             using (var db = new FleetUow()) {
-                //var category = db.Categories.Query().ToList();
-                //Assert.IsTrue(category.Count > 0);
+                var category = db.Engines.Query().ToList();
+                Assert.IsTrue(category.Count > 0);
             }
         }
     }

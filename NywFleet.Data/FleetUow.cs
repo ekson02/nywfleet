@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NywFleet.Core.Models;
 using NywFleet.Data.Contracts;
 using NywFleet.Data.DataContext;
 using NywFleet.Data.Helpers;
@@ -15,7 +16,7 @@ namespace NywFleet.Data {
             CreateDbContext();
             RepositoryProvider = new RepositoryProvider(new RepositoryFactories()) { DbContext = DbContext };
         }
-        //public IRepository<Question> Questions => GetStandardRepo<Question>();
+        public IRepository<Engine> Engines => GetStandardRepo<Engine>();
         //public IRepository<Answer> QuestionAnswers => GetStandardRepo<Answer>();
 
         public int? UserId { get; set; }

@@ -1,9 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace NywFleet.Core.Models {
-    public class Engine {
-        
+namespace NywFleet.Core.Models
+{
+    public  class Engine
+    {
+       
+
         public int EngineId { get; set; }
-        public string EngineName { get; set; }        
+        public string EngineName { get; set; }
+        public ICollection<VesselEngine> VesselEngines { get; set; }
     }
 }

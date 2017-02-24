@@ -58,6 +58,18 @@
     <Compile Include="Helpers\PredicateBuilder.cs" />
     <Compile Include="Helpers\RepositoryFactories.cs" />
     <Compile Include="Helpers\RepositoryProvider.cs" />
+    <Compile Include="Mapping\EngineMaintenanceResultMap.cs" />
+    <Compile Include="Mapping\EngineMap.cs" />
+    <Compile Include="Mapping\Look_LookAbnormalConditionsMap.cs" />
+    <Compile Include="Mapping\Look_MaintenanceCriteriasMap.cs" />
+    <Compile Include="Mapping\MaintenanceCriteriaResultMap.cs" />
+    <Compile Include="Mapping\VesselEngineMap.cs" />
+    <Compile Include="Mapping\VesselMaintenanceMap.cs" />
+    <Compile Include="Mapping\VesselMap.cs" />
+    <Compile Include="Migrations\201702242221165_Init.cs" />
+    <Compile Include="Migrations\201702242221165_Init.Designer.cs">
+      <DependentUpon>201702242221165_Init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,7 +84,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mapping\" />
+    <EmbeddedResource Include="Migrations\201702242221165_Init.resx">
+      <DependentUpon>201702242221165_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

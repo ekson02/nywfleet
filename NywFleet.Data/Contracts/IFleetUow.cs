@@ -1,6 +1,8 @@
-﻿namespace NywFleet.Data.Contracts {
+﻿using NywFleet.Core.Models;
+
+namespace NywFleet.Data.Contracts {
     public interface IFleetUow {
-        //IRepository<Question> Questions { get; }
+        IRepository<Engine> Engines { get; }
         //IRepository<Answer> QuestionAnswers { get; }
         //IRepository<TestConfiguration> TestConfigurations { get; }
         //IRepository<TestVersion> TestVersions { get; }

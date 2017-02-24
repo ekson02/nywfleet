@@ -1,4 +1,5 @@
-﻿namespace NywFleet.Core.Models {
+﻿
+namespace NywFleet.Core.Models {
     public class EngineMaintenanceResult {
         public string Id { get; set; }
         public int VesselEngineId { get; set; }
