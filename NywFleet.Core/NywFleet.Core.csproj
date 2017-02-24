@@ -44,14 +44,16 @@
     <Compile Include="Common\InspectionResult.cs" />
     <Compile Include="Models\Base\LookupBase.cs" />
     <Compile Include="Models\Engine.cs" />
-    <Compile Include="Models\EngineMaintenance.cs" />
+    <Compile Include="Models\EngineMaintenanceResult.cs" />
+    <Compile Include="Models\Lookups\LookAbnormalCondition.cs" />
+    <Compile Include="Models\Lookups\LookMaintenanceCriteria.cs" />
     <Compile Include="Models\Vessel.cs" />
     <Compile Include="Models\VesselMaintenance.cs" />
+    <Compile Include="Models\MaintenanceCriteriaResult.cs" />
+    <Compile Include="Models\VesselEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Lookups\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

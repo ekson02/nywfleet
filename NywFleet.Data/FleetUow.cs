@@ -80,7 +80,7 @@ namespace NywFleet.Data {
         }
 
         protected void CreateDbContext() {
-            DbContext = new QTestContext();
+            DbContext = new NYFleetContext();
             DbContext.Configuration.ProxyCreationEnabled = false;
             DbContext.Configuration.LazyLoadingEnabled = false;
             DbContext.Configuration.ValidateOnSaveEnabled = false;
@@ -97,7 +97,7 @@ namespace NywFleet.Data {
             return RepositoryProvider.GetRepository<T>();
         }
 
-        private QTestContext DbContext { get; set; }
+        private NYFleetContext DbContext { get; set; }
 
         #region IDisposable
 

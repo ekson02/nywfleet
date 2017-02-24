@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace NywFleet.Core.Models {
     public class Vessel {
         public Vessel() {
-            MaintenanceLog = new List<VesselMaintenance>();
-            Engines = new List<Engine>();
+            VesselMaintenance = new List<VesselMaintenance>();
+            VesselEngines = new List<VesselEngine>();
         }
         public int VesselId { get; set; }
-        public string Name { get; set; }
+        public string VesselName { get; set; }
         public string ImageUrl { get; set; }
         public string DossierId { get; set; }
-        public ICollection<VesselMaintenance> MaintenanceLog { get; set; }
-        public ICollection<Engine> Engines { get; set; }
+        public ICollection<VesselMaintenance> VesselMaintenance { get; set; }
+        public ICollection<VesselEngine> VesselEngines { get; set; }
 
     }
 }
