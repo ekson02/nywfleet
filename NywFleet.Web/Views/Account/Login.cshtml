@@ -4,55 +4,39 @@
     Layout = "~/Views/Shared/_NoHeaderLayout.cshtml";
 }
 
+<div class="login-page">
+    <header> <a href="#" class='logo-link'> <img src="/images/logo.png" alt='NY WATERWAY'></a></header>
 
-<div class="sign-in-page">
-    <div class='sub-header-sign-in'>
-        <p>
-            Please sign in 
-        </p>
-    </div>
-
-    <section class="form-sign-in">
+    <div class="form-sign-in">
         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" })) {
+
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
 
+
+            <div class="form-group">
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="material-icons icon-blue">mail</i></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "useremail@gmail.com" })
                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                 </div>
-
-
             </div>
             <div class="form-group">
-
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="material-icons icon-blue">vpn_key</i></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger", placeholder = "password" })
                 </div>
             </div>
+            <div class="col-md-12 reset-padding-right">
+                <input type="submit" value="Log in" class="btn btn-primary" />
 
-
-            <div>
-                <div class="col-md-8 reset-padding-left">
-                    <a href="#" class='links-form'>
-                        @Html.CheckBoxFor(m => m.RememberMe) Remember me
-                    </a>
-                    <a href="@Url.Action("ForgotPassword")" class='links-form'> <i class="material-icons">error_outline</i> Forgot password? </a>
-                </div>
-
-                <div class="col-md-4 reset-padding-right">
-                    <input type="submit" value="Log in" class="tn btn-primary btn-lg pull-right submit-form-btn" />
-                </div>
             </div>
-
         }
-    </section>
+    </div>
 
 </div>
+
 
 
 @section Scripts {

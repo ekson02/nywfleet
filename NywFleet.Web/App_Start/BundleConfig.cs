@@ -22,8 +22,9 @@ namespace NywFleet.Web {
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/bootstrap.theme.min.css",
-                      "~/Content/site.css"));
+                      //"~/Content/bootstrap.theme.min.css",
+                      "~/Content/style.css"));
+
             bundles.Add(new StyleBundle("~/Content/datatables").Include("~/Content/dataTables.bootstrap.min.css"));
         }
     }

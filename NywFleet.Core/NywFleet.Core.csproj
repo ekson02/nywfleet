@@ -45,8 +45,8 @@
     <Compile Include="Models\Base\LookupBase.cs" />
     <Compile Include="Models\Engine.cs" />
     <Compile Include="Models\EngineMaintenanceResult.cs" />
-    <Compile Include="Models\Lookups\Look_LookAbnormalConditions.cs" />
-    <Compile Include="Models\Lookups\Look_MaintenanceCriterias.cs" />
+    <Compile Include="Models\Lookups\LookAbnormalCondition.cs" />
+    <Compile Include="Models\Lookups\LookMaintenanceCriteria.cs" />
     <Compile Include="Models\Vessel.cs" />
     <Compile Include="Models\VesselMaintenance.cs" />
     <Compile Include="Models\MaintenanceCriteriaResult.cs" />

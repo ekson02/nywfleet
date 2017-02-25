@@ -10,8 +10,8 @@ namespace NywFleet.Core.Models {
         public bool? JHPU { get; set; }
         public bool? Belts { get; set; }
         public decimal CoolantTemp { get; set; }
-        public decimal OilPreassureIdle { get; set; }
-        public decimal OilPreassureNormal { get; set; }
+        public decimal OilPressureIdle { get; set; }
+        public decimal OilPressureNormal { get; set; }
         public VesselEngine VesselEngine { get; set; }
         public VesselMaintenance VesselMaintenance { get; set; }
     }

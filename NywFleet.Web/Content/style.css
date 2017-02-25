@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+body { background-color: #fafafa }
+.reset-padding-left { padding-left: 0 !important; }
+.reset-padding-right { padding-right: 0 !important; }
+.reset-padding { padding-left: 0 !important; padding-right: 0 !important; }
+.btn:hover { background-color: #006687 !important; }
+.alert { margin: 30px auto; padding: 30px !important; }
+.alert-danger { background-color: rgba(240,65,36,.85); }
+.img-responsive { width: 100%; height: auto; }
+/* Login Page */
+.login-page { padding-top: 100px; max-width: 400px; margin: 0 auto; text-align: center; }
+.logo-link { margin-bottom: 50px; display: inline-block; }
+.login-page .form-control { height: 40px; font-size: 16px; }
+.login-page .form-group { margin-bottom: 25px; }
+.login-page .btn-primary { background-color: #007ac3; font-weight: bold; padding: 10px 50px; font-size: 18px; border: none; }
+/* Select Vessel Page */
+.top-bar { background-color: #000000; padding:8px; color: #fff; height: 35px; }
+.top-bar a { color: #fff; }
+.left-arrow { font-size: 7px; padding: 0 6px; }
+.navbar-default { background-color: #eeeae7; background-image: none; }
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover { background-color: #fff; background-image: none; box-shadow: none; }
+.notif { display: inline-block; padding: 0px 7px; vertical-align: baseline; color: #fff; font-weight: bold; font-size: 12px; border-radius: 10px; }
+.notif-red { background-color: #ed1b24; }
+.vessel-header { font-size: 22px; font-weight: bold; margin-top: 30px; }
+.section, header { display: block; position: relative; }
+.vessel-box { max-width: 90%; margin: auto; margin-top: 30px; border: 1px solid #007ac2; border-radius: 5px; }
+.verssel-header { padding: 13px 20px; background-color: #007ac2; }
+.verssel-header h1 { margin: 0; color: #fff; font-weight: bold; font-size: 18px; }
+.vessel-content { padding: 20px; text-align: center; }
+.vessel-content  img{ width: 100%; max-width: 150px}
+.wrap { margin-bottom: 30px; }

@@ -1,7 +1,7 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using NywFleet.Core.Models;
 
-namespace NywFleet.Core.Models.Mapping
+namespace NywFleet.Data.Mapping
 {
     public class VesselEngineMap : EntityTypeConfiguration<VesselEngine>
     {
@@ -13,16 +13,7 @@ namespace NywFleet.Core.Models.Mapping
             // Properties
             // Table & Column Mappings
             this.ToTable("VesselEngines");
-            this.Property(t => t.VesselEngineId).HasColumnName("VesselEngineId");
-            this.Property(t => t.EngineId).HasColumnName("EngineId");
-            this.Property(t => t.VesselId).HasColumnName("VesselId");
-            this.Property(t => t.CoolantTempLow).HasColumnName("CoolantTempLow");
-            this.Property(t => t.CoolantTempHeigh).HasColumnName("CoolantTempHeigh");
-            this.Property(t => t.OilPressureIdleLow).HasColumnName("OilPressureIdleLow");
-            this.Property(t => t.OilPressureIdleHeigh).HasColumnName("OilPressureIdleHeigh");
-            this.Property(t => t.OilPressureNormalLow).HasColumnName("OilPressureNormalLow");
-            this.Property(t => t.OilPressureNormalHeigh).HasColumnName("OilPressureNormalHeigh");
-
+          
             // Relationships
             this.HasRequired(t => t.Engine)
                 .WithMany(t => t.VesselEngines)

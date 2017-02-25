@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("app", [
-        "app.core", "app.tests", "app.layout"
+        "app.core", "app.maintenance", "app.layout"
     ]);
 
 })();

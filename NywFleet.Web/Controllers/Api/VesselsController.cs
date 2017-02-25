@@ -1,17 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
-using Microsoft.Ajax.Utilities;
-using Microsoft.AspNet.Identity;
-using Newtonsoft.Json;
-using NywFleet.Services;
-using NywFleet.Web.Models;
 
 namespace NywFleet.Web.Controllers.Api {
-    public class TestController : BaseApiController {
-        //[Authorize]
+    [Authorize]
+    public class VesselsController : BaseApiController {
+
+        public IHttpActionResult Get() {
+            var vessels = Uow.Vessels.Query().Where(p => p.IsActive).OrderBy(p => p.VesselName).ToList();
+            return Ok(vessels);
+        }
+
+        public IHttpActionResult Get(int id) {
+            var vessels = Uow.Vessels.GetAllWithInclude(p => p.VesselEngines)
+                .FirstOrDefault(p => p.VesselId == id);
+            return Ok(vessels);
+        }
+
+
         //public IHttpActionResult Post(LookTestTypeCodes testType) {
         //    var url = Request.GetRequestContext().VirtualPathRoot;
         //    var testTypeInfo = Uow.TestTypeCodes.Query().FirstOrDefault(p => p.TestTypeCd == testType.TestTypeCd);

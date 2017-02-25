@@ -6,8 +6,8 @@ namespace NywFleet.Web {
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("LogsSpa", "tests/{*pathInfo}",
-            new { controller = "Logs", action = "Index", id = UrlParameter.Optional });
+            routes.MapRoute("LogsSpa", "maintenance/{*pathInfo}",
+            new { controller = "maintenance", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",

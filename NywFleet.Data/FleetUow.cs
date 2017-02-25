@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NywFleet.Core.Models;
+using NywFleet.Core.Models.Lookups;
 using NywFleet.Data.Contracts;
 using NywFleet.Data.DataContext;
 using NywFleet.Data.Helpers;
@@ -17,7 +18,9 @@ namespace NywFleet.Data {
             RepositoryProvider = new RepositoryProvider(new RepositoryFactories()) { DbContext = DbContext };
         }
         public IRepository<Engine> Engines => GetStandardRepo<Engine>();
-        //public IRepository<Answer> QuestionAnswers => GetStandardRepo<Answer>();
+        public IRepository<Vessel> Vessels => GetStandardRepo<Vessel>();
+        public IRepository<LookAbnormalCondition> LookAbnormalConditions => GetStandardRepo<LookAbnormalCondition>();
+        public IRepository<LookMaintenanceCriteria> LookMaintenanceCriteria => GetStandardRepo<LookMaintenanceCriteria>();
 
         public int? UserId { get; set; }
 
@@ -81,7 +84,7 @@ namespace NywFleet.Data {
         }
 
         protected void CreateDbContext() {
-            DbContext = new NYFleetContext();
+            DbContext = new NyFleetContext();
             DbContext.Configuration.ProxyCreationEnabled = false;
             DbContext.Configuration.LazyLoadingEnabled = false;
             DbContext.Configuration.ValidateOnSaveEnabled = false;
@@ -98,7 +101,7 @@ namespace NywFleet.Data {
             return RepositoryProvider.GetRepository<T>();
         }
 
-        private NYFleetContext DbContext { get; set; }
+        private NyFleetContext DbContext { get; set; }
 
         #region IDisposable
 

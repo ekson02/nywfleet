@@ -1,7 +1,7 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using NywFleet.Core.Models;
 
-namespace NywFleet.Core.Models.Mapping
+namespace NywFleet.Data.Mapping
 {
     public class VesselMap : EntityTypeConfiguration<Vessel>
     {

@@ -1,12 +1,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
-namespace NywFleet.Core.Models.Mapping
-{
-    public class MaintenanceCriteriaResultMap : EntityTypeConfiguration<MaintenanceCriteriaResult>
-    {
-        public MaintenanceCriteriaResultMap()
-        {
+namespace NywFleet.Core.Models.Mapping {
+    public class MaintenanceCriteriaResultMap : EntityTypeConfiguration<MaintenanceCriteriaResult> {
+        public MaintenanceCriteriaResultMap() {
             // Primary Key
             this.HasKey(t => t.Id);
 
@@ -23,7 +20,7 @@ namespace NywFleet.Core.Models.Mapping
             this.Property(t => t.Comment).HasColumnName("Comment");
 
             // Relationships
-            this.HasOptional(t => t.Look_MaintenanceCriterias)
+            this.HasOptional(t => t.LookMaintenanceCriteria)
                 .WithMany(t => t.MaintenanceCriteriaResults)
                 .HasForeignKey(d => d.MaintenanceCriteriaCd);
             this.HasRequired(t => t.VesselMaintenance)

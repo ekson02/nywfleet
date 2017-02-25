@@ -1,10 +1,13 @@
 ﻿using NywFleet.Core.Models;
+using NywFleet.Core.Models.Lookups;
 
 namespace NywFleet.Data.Contracts {
     public interface IFleetUow {
         IRepository<Engine> Engines { get; }
-        //IRepository<Answer> QuestionAnswers { get; }
-        //IRepository<TestConfiguration> TestConfigurations { get; }
+        IRepository<Vessel> Vessels { get; }
+        IRepository<LookAbnormalCondition> LookAbnormalConditions { get; }
+        IRepository<LookMaintenanceCriteria> LookMaintenanceCriteria { get; }
+
         //IRepository<TestVersion> TestVersions { get; }
         //IRepository<UserTest> UserTests { get; }
         //IRepository<UserTestAnswer> UserTestAnswers { get; }

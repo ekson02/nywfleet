@@ -1,11 +1,11 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using NywFleet.Core.Models.Lookups;
 
-namespace NywFleet.Core.Models.Mapping
+namespace NywFleet.Data.Mapping
 {
-    public class Look_MaintenanceCriteriasMap : EntityTypeConfiguration<Look_MaintenanceCriterias>
+    public class LookMaintenanceCriteriaMap : EntityTypeConfiguration<LookMaintenanceCriteria>
     {
-        public Look_MaintenanceCriteriasMap()
+        public LookMaintenanceCriteriaMap()
         {
             // Primary Key
             this.HasKey(t => t.MaintenanceCriteriaCd);
@@ -20,7 +20,7 @@ namespace NywFleet.Core.Models.Mapping
                 .HasMaxLength(500);
 
             // Table & Column Mappings
-            this.ToTable("Look_MaintenanceCriterias");
+            this.ToTable("Look_MaintenanceCriteria");
             this.Property(t => t.MaintenanceCriteriaCd).HasColumnName("MaintenanceCriteriaCd");
             this.Property(t => t.DisplayName).HasColumnName("DisplayName");
         }

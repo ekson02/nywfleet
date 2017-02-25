@@ -7,7 +7,7 @@
 
     /* @ngInject */
     function appRun(routerHelper) {
-        var otherwise = '/dashboard';
+        var otherwise = '/vessel-selector';
         routerHelper.configureStates(getStates(), otherwise);
     }
 

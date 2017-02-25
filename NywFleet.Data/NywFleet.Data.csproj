@@ -60,8 +60,8 @@
     <Compile Include="Helpers\RepositoryProvider.cs" />
     <Compile Include="Mapping\EngineMaintenanceResultMap.cs" />
     <Compile Include="Mapping\EngineMap.cs" />
-    <Compile Include="Mapping\Look_LookAbnormalConditionsMap.cs" />
-    <Compile Include="Mapping\Look_MaintenanceCriteriasMap.cs" />
+    <Compile Include="Mapping\LookAbnormalConditionsMap.cs" />
+    <Compile Include="Mapping\LookMaintenanceCriteriaMap.cs" />
     <Compile Include="Mapping\MaintenanceCriteriaResultMap.cs" />
     <Compile Include="Mapping\VesselEngineMap.cs" />
     <Compile Include="Mapping\VesselMaintenanceMap.cs" />
