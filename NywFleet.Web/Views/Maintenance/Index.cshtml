@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNet.Identity
-
 @{
     ViewBag.Title = "title";
     Layout = null;
@@ -9,20 +8,18 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SELECT VESSEL | NY WATERWAY</title>
     @Styles.Render("~/Content/css")
     <base href="/maintenance/">
     <link href="~/Content/toastr.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
-
-
-<body ng-controller="ShellController as shell" ng-class="shell.bodyClass" ng-cloak>
+<body >
     @*<header ng-show="shell.bodyClass=='page'">
             <a href="/" class='logo-link'> <img src="/images/5q-logo.png" alt='5Q'></a>
         </header>*@
-
     <header>
         <div class='top-bar'>
             <div class='pull-left '>
@@ -64,15 +61,14 @@
     <script src="~/js/app/maintenance/maintenance.module.js"></script>
     <script src="~/js/app/maintenance/controllers/vessel-selection.controller.js"></script>
     <script src="~/js/app/maintenance/controllers/maintenance.js"></script>
+    <script src="~/js/app/maintenance/directives/nyw-engine-config.js"></script>
     @*<script src="~/js/app/maintenance/controllers/process-LKRDS.controller.js"></script>
         <script src="~/js/app/maintenance/controllers/process-SRTSK.controller.js"></script>*@
     <script src="~/js/app/maintenance/maintenance.route.js"></script>
     <script src="~/js/app/maintenance/maintenance.service.js"></script>
-
     <script src="~/js/app/layout/layout.module.js"></script>
     <script src="~/js/app/layout/shell.controller.js"></script>
     <script src="~/js/app/app.module.js"></script>
 </body>
 </html>
-
 

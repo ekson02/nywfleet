@@ -11,7 +11,7 @@ namespace NywFleet.Web.Controllers.Api {
         }
 
         public IHttpActionResult Get(int id) {
-            var vessels = Uow.Vessels.GetAllWithInclude(p => p.VesselEngines)
+            var vessels = Uow.Vessels.GetAllWithInclude("VesselEngines", "VesselEngines.Engine")
                 .FirstOrDefault(p => p.VesselId == id);
             return Ok(vessels);
         }

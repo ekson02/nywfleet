@@ -1,0 +1,72 @@
+<div class="portlet-box">
+    <div class="portlet-header">
+        <h1>
+            <img src="/images/header-port-ico.png">{{engine.engine.engineName}}
+        </h1>
+    </div>
+    <div class="portlet-content">
+
+        <table>
+            <tbody>
+                <!--<tr>
+                    <td></td>
+                    <td><a href="#"><span class="glyphicon glyphicon-ok btn-icon btn-ok"></span></a></td>
+                    <td><a href="#"><span class="btn-icon btn-cancel"><img src="/images/flag-white.png"></span></a></td>
+                </tr>-->
+                <tr>
+                    <td><strong>Engine Oil</strong></td>
+                    <td><input type="radio" class="checkbox checkbox-ok" id="oil-ok-{{$index}}" name="oil_{{$index}}" ng-model="engine.oil" ng-click="vm.uncheck(engine,'oil',$event)" value="true" /> <label for="oil-ok-{{$index}}"></label></td>
+                    <td><input type="radio" class="checkbox checkbox-cancel" id="oil-fl-{{$index}}" name="oil_{{$index}}" ng-model="engine.oil" ng-click="vm.uncheck(engine,'oil',$event)" value="false" /> <label for="oil-fl-{{$index}}"></label></td>
+
+                </tr>
+
+                <tr>
+                    <td><strong>Coolant </strong></td>
+                    <td><input type="radio" class="checkbox checkbox-ok" id="cool_chek-ok-{{$index}}" name="cool_{{$index}}" ng-model="engine.coolant" ng-click="vm.uncheck(engine,'coolant',$event)" value="true" /> <label for="cool_chek-ok-{{$index}}"></label></td>
+                    <td><input type="radio" class="checkbox checkbox-cancel" id="cool_chek-fl-{{$index}}" name="cool_{{$index}}" ng-model="engine.coolant" ng-click="vm.uncheck(engine,'coolant',$event)" value="false" /> <label for="cool_chek-fl-{{$index}}"></label></td>
+                </tr>
+                <tr>
+                    <td><strong>Jet Bearing</strong></td>
+                    <td><input type="radio" class="checkbox checkbox-ok" id="jet-ok-{{$index}}" name="jet_{{$index}}" ng-model="engine.jetBearing" ng-click="vm.uncheck(engine,'jetBearing',$event)" value="true" /> <label for="jet-ok-{{$index}}"></label></td>
+                    <td><input type="radio" class="checkbox checkbox-cancel" id="jet-fl-{{$index}}" name="jet_{{$index}}" ng-model="engine.jetBearing" ng-click="vm.uncheck(engine,'jetBearing',$event)" value="false" /> <label for="jet-fl-{{$index}}"></label></td>
+                </tr>
+                <tr>
+                    <td><strong>JHPU</strong></td>
+                    <td><input type="radio" class="checkbox checkbox-ok" id="jhpu-ok-{{$index}}" name="jhpu_{{$index}}" ng-model="engine.jhpu" ng-click="vm.uncheck(engine,'jhpu',$event)" value="true" /> <label for="jhpu-ok-{{$index}}"></label></td>
+                    <td><input type="radio" class="checkbox checkbox-cancel" id="jhpu-fl-{{$index}}" name="jhpu_{{$index}}" ng-model="engine.jhpu" ng-click="vm.uncheck(engine,'jhpu',$event)" value="false" /> <label for="jhpu-fl-{{$index}}"></label></td>
+
+                </tr>
+                <tr>
+                    <td><strong>Engine Belts</strong></td>
+                    <td><input type="radio" class="checkbox checkbox-ok" id="belts-ok-{{$index}}" name="belts_{{$index}}" ng-model="engine.belts" ng-click="vm.uncheck(engine,'belts',$event)" value="true" /> <label for="belts-ok-{{$index}}"></label></td>
+                    <td><input type="radio" class="checkbox checkbox-cancel" id="belts-fl-{{$index}}" name="belts_{{$index}}" ng-model="engine.belts" ng-click="vm.uncheck(engine,'belts',$event)" value="false" /> <label for="belts-fl-{{$index}}"></label></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="buttons_wrap">
+            <a href="#" class='btn btn-check btn-ok' ng-click="vm.toggleEnginProperties(engine,'true')"><span class="glyphicon glyphicon-ok "></span> All OK</a>
+            <a href="#" class='btn btn-check btn-cancel' ng-click="vm.toggleEnginProperties(engine,'false')"> <span class="glyphicon glyphicon-alert"></span> &nbsp; Abnormal</a>
+        </div>
+        <div class="engine-temp-header_wrap">
+            <h2>Engine Temp. and Pressures</h2>
+            <span>(Once Boat is Underway)</span>
+        </div>
+        <table class='engine-temp-table'>
+            <tbody>
+                <tr>
+                    <td><strong>Eng Coolant Temp.</strong></td>
+                    <td><input type='text' ng-model="engine.coolantTemp" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
+                </tr>
+                <tr>
+                    <td><strong>Oil Press. Idle</strong></td>
+                    <td><input type='text' ng-model="engine.oilPressureIdle" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
+                </tr>
+                <tr>
+                    <td><strong>Oil Press. Normal</strong></td>
+                    <td><input type='text' ng-model="engine.oilPressureNormal" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

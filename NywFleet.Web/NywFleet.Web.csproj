@@ -208,9 +208,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\admin.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.theme.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\jquery-ui.min.css" />
@@ -222,8 +223,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\old-Site.css" />
+    <Content Include="images\bg-top-maitenance.png" />
+    <Content Include="images\check.png" />
+    <Content Include="images\condition-icon.png" />
+    <Content Include="images\flag-red.png" />
+    <Content Include="images\flag-white.png" />
+    <Content Include="images\fuel-icon.png" />
+    <Content Include="images\header-port-ico.png" />
     <Content Include="images\logo-lf.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\maitenance-logo.png" />
+    <Content Include="images\start-end-ico.png" />
     <Content Include="images\vessel-img.jpg" />
     <Content Include="images\vessels\molly-pitcher.jpg" />
     <Content Include="images\vessels\vessel-img.jpg" />
@@ -253,6 +263,8 @@
     <Content Include="js\app\layout\shell.controller.js" />
     <Content Include="js\app\maintenance\controllers\maintenance.js" />
     <Content Include="js\app\maintenance\controllers\vessel-selection.controller.js" />
+    <Content Include="js\app\maintenance\directives\nyw-engine-config.html" />
+    <Content Include="js\app\maintenance\directives\nyw-engine-config.js" />
     <Content Include="js\app\maintenance\templates\test-process-lkrds.html" />
     <Content Include="js\app\maintenance\templates\test-process-srtsk.html" />
     <Content Include="js\app\maintenance\templates\vessel-selection.html" />
@@ -284,6 +296,7 @@
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

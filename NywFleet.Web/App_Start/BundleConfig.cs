@@ -18,12 +18,14 @@ namespace NywFleet.Web {
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-theme.js",
                       "~/Scripts/respond.js"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      //"~/Content/bootstrap.theme.min.css",
+            
+                     bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/bootstrap-theme.min.css",
                       "~/Content/style.css"));
+
 
             bundles.Add(new StyleBundle("~/Content/datatables").Include("~/Content/dataTables.bootstrap.min.css"));
         }
