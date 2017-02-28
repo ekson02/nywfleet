@@ -1,7 +1,7 @@
 ﻿
 namespace NywFleet.Core.Models {
     public class EngineMaintenanceResult {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public int VesselEngineId { get; set; }
         public int VesselMaintenanceId { get; set; }
         public bool? Oil { get; set; }

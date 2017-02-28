@@ -187,6 +187,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\BaseApiController.cs" />
     <Compile Include="Controllers\Api\LookupController.cs" />
+    <Compile Include="Controllers\Api\VesselMaintenanceController.cs" />
     <Compile Include="Controllers\Api\VesselsController.cs" />
     <Compile Include="Controllers\BaseMvcController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

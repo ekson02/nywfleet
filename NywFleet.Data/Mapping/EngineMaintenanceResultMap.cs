@@ -7,12 +7,6 @@ namespace NywFleet.Data.Mapping {
             // Primary Key
             this.HasKey(t => t.Id);
 
-            // Properties
-            this.Property(t => t.Id)
-                .IsRequired()
-                .HasMaxLength(128);
-
-
             // Relationships
             this.HasRequired(t => t.VesselEngine)
                 .WithMany(t => t.EngineMaintenanceResults)

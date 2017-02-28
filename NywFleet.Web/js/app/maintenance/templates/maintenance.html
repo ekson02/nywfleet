@@ -4,13 +4,14 @@
         <h2 class='header-maitenance'>MAINTENANCE LOG</h2>
     </div>
 </header>
-
-
+<pre>
+{{vm.maintenance|json}}
+</pre>
 <section class='col-md-12 reset-padding wrap'>
     <div class="container">
         <div class="row">
 
-            <div class="col-md-3 col-sm-4 col-xs-12 portlet-wrap" ng-repeat="engine in vm.vessel.vesselEngines">
+            <div class="col-md-3 col-sm-4 col-xs-12 portlet-wrap" ng-repeat="engine in  vm.maintenance.engineMaintenanceResults">
                 <div nyw-engine-config></div>
             </div>            
         </div>
@@ -29,7 +30,8 @@
                         <h1><img src="/images/start-end-ico.png">Starting/Ending Hours</h1>
                     </div>
                     <div class="portlet-content portlet-pad">
-                        <input type='text' class='portlet-input portlet-input-bg' placeholder='Enter Starting Hrs. Here' /><input type='text' class='portlet-input portlet-input-bg' placeholder='Enter Ending  Hrs. Here' />
+                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.startHours" placeholder='Enter Starting Hrs. Here' />
+                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.endHours" placeholder='Enter Ending  Hrs. Here' />
                     </div>
                 </div>
             </div>
@@ -40,7 +42,8 @@
                         <h1><img src="/images/fuel-icon.png">Fuel <span>(Gallons)</span> </h1>
                     </div>
                     <div class="portlet-content portlet-pad">
-                        <input type='text' class='portlet-input portlet-input-bg' placeholder='Enter Starting Volume Here' /><input type='text' class='portlet-input portlet-input-bg' placeholder='Enter Ending  Volume Here' />
+                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.startFuel" placeholder='Enter Starting Volume Here' />
+                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.endFuel" placeholder='Enter Ending  Volume Here' />
                     </div>
                 </div>
             </div>
@@ -52,43 +55,30 @@
                     </div>
                     <div class="portlet-content portlet-pad">
                         <div class='select_wrap'>
-                            <select class='portlet-input portlet-input-bg select'>
+                            <select class='portlet-input portlet-input-bg select' ng-model="vm.selectedCondition"  ng-change="vm.addAbnormalCondition()"
+                                     data-ng-options="act for act in vm.abnormalConditionList">
                                 <option value=''>Choose Condition</option>
                             </select>
+                            
                         </div>
-                        <table class='add-con-table'>
-                            <tr>
-                                <td><strong>Engine Oil</strong></td>
-                                <td><a href="#" class='btn-brd-remove'>Remove</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>VHF Rafio Transmit Audio Bad</strong></td>
-                                <td><a href="#" class='btn-brd-remove'>Remove</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Wheelhouse Battery Dead</strong></td>
-                                <td><a href="#" class='btn-brd-remove'>Remove</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Cut Display Broken</strong></td>
-                                <td><a href="#" class='btn-brd-remove'>Remove</a></td>
-                            </tr>
-                        </table>
+                        
 
-
-                        <textarea class="report-textarea portlet-input">  Report abnormal conditions in detail here... </textarea>
+                        <textarea ng-model="vm.maintenance.abnormalConditions" class="report-textarea portlet-input">  Report abnormal conditions in detail here... </textarea>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-12 highlight-wrap">
+            <!--<div class="col-xs-12 highlight-wrap">
                 <h2 class="highlight-header">Check ALL</h2>
-            </div>
+            </div>-->
 
 
             <div class="col-md-12 portlet-wrap">
-                <div class="portlet-box portlet-lf portlet-content-tr">
-                    <div class="portlet-content">
+                <div class="portlet-box portlet-lf ">
+                    <div class="portlet-header portlet-header-left">
+                        <h1><img src="/images/condition-icon.png">Check ALL</h1>
+                    </div>
+                    <div class="portlet-content portlet-pad" ">
                         <table>
                             <tbody>
                                 <tr>
@@ -160,7 +150,7 @@
                             </tbody>
                         </table>
                         <div class="btn-check-all_wrap">
-                            <a href="#" class="btn-check btn-ok btn-check-all">All OK</a>  <a href="#" class="btn-check btn-cancel btn-check-all">All Abnormal</a>
+                            <a href="#" class="btn-check btn-ok btn-check-all">All OK</a> <a href="#" class="btn-check btn-cancel btn-check-all">All Abnormal</a>
                         </div>
                     </div>
                 </div>

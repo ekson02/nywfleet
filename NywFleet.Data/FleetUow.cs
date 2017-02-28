@@ -19,6 +19,7 @@ namespace NywFleet.Data {
         }
         public IRepository<Engine> Engines => GetStandardRepo<Engine>();
         public IRepository<Vessel> Vessels => GetStandardRepo<Vessel>();
+        public IRepository<VesselMaintenance> VesselMaintenance => GetStandardRepo<VesselMaintenance>();
         public IRepository<LookAbnormalCondition> LookAbnormalConditions => GetStandardRepo<LookAbnormalCondition>();
         public IRepository<LookMaintenanceCriteria> LookMaintenanceCriteria => GetStandardRepo<LookMaintenanceCriteria>();
 

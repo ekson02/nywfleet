@@ -101,7 +101,7 @@ label:hover:before { border: 1px solid #ccc; }
 .sep-section { margin: 50px auto; height: 1px; background-color: #e1e1e1; border: none !important; width: 100%; clear: both; float: left; }
 .portlet-pad { padding: 25px 0; }
 .portlet-pad input, .portlet-pad select { margin-left: 25px; }
-.portlet-lf { max-width: 90%; margin: 25px auto; }
+.portlet-lf {margin: 25px auto; }
 .portlet-lf h1, .portlet-lf .portlet-content { text-align: left; }
 .portlet-lf h1 { font-size: 23px; }
 .portlet-lf h1 span { font-size: 23px; font-weight: lighter; }
