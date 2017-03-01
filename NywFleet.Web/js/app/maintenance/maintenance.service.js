@@ -9,7 +9,8 @@
             getAllVessels: getAllVessels,
             getAllVesselById: getAllVesselById,
             getMaintenanceCriteria: getMaintenanceCriteria,
-            getAbnormalConditions: getAbnormalConditions
+            getAbnormalConditions: getAbnormalConditions,
+            saveLog: saveLog
         }
         return service;
         ///----
@@ -25,23 +26,21 @@
             }).catch(fail);
         };
 
-        function getMaintenanceCriteria(vesselId) {
+        function getMaintenanceCriteria() {
             return $http.get(config.apiUrl + "lookup/maintenance-criteria").then(function (response) {
                 return success(response);
             }).catch(fail);
         };
 
 
-        function getAbnormalConditions(vesselId) {
+        function getAbnormalConditions() {
             return $http.get(config.apiUrl + "lookup/abnormal-conditions").then(function (response) {
                 return success(response);
             }).catch(fail);
         };
 
-
-        function startTest(testType) {
-            var data = { testTypeCd: testType };
-            return $http.post(config.apiUrl + "test", data).then(function (response) {
+        function saveLog(data) {
+            return $http.post(config.apiUrl + "VesselMaintenance", data).then(function (response) {
                 return success(response);
             }).catch(fail);
         };

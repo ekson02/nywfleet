@@ -262,12 +262,13 @@
     <Content Include="js\app\core\services\utility.service.js" />
     <Content Include="js\app\layout\layout.module.js" />
     <Content Include="js\app\layout\shell.controller.js" />
-    <Content Include="js\app\maintenance\controllers\maintenance.js" />
+    <Content Include="js\app\maintenance\controllers\maintenance.controller.js" />
+    <Content Include="js\app\maintenance\controllers\thank-you.controller.js" />
     <Content Include="js\app\maintenance\controllers\vessel-selection.controller.js" />
     <Content Include="js\app\maintenance\directives\nyw-engine-config.html" />
     <Content Include="js\app\maintenance\directives\nyw-engine-config.js" />
     <Content Include="js\app\maintenance\templates\test-process-lkrds.html" />
-    <Content Include="js\app\maintenance\templates\test-process-srtsk.html" />
+    <Content Include="js\app\maintenance\templates\done.html" />
     <Content Include="js\app\maintenance\templates\vessel-selection.html" />
     <Content Include="js\app\maintenance\maintenance.module.js" />
     <Content Include="js\app\maintenance\maintenance.route.js" />

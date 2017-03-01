@@ -4,16 +4,14 @@
         <h2 class='header-maitenance'>MAINTENANCE LOG</h2>
     </div>
 </header>
-<pre>
-{{vm.maintenance|json}}
-</pre>
+
 <section class='col-md-12 reset-padding wrap'>
     <div class="container">
         <div class="row">
 
             <div class="col-md-3 col-sm-4 col-xs-12 portlet-wrap" ng-repeat="engine in  vm.maintenance.engineMaintenanceResults">
                 <div nyw-engine-config></div>
-            </div>            
+            </div>
         </div>
     </div>
 </section>
@@ -55,13 +53,13 @@
                     </div>
                     <div class="portlet-content portlet-pad">
                         <div class='select_wrap'>
-                            <select class='portlet-input portlet-input-bg select' ng-model="vm.selectedCondition"  ng-change="vm.addAbnormalCondition()"
-                                     data-ng-options="act for act in vm.abnormalConditionList">
+                            <select class='portlet-input portlet-input-bg select' ng-model="vm.selectedCondition" ng-change="vm.addAbnormalCondition()"
+                                    data-ng-options="act for act in vm.abnormalConditionList">
                                 <option value=''>Choose Condition</option>
                             </select>
-                            
+
                         </div>
-                        
+
 
                         <textarea ng-model="vm.maintenance.abnormalConditions" class="report-textarea portlet-input">  Report abnormal conditions in detail here... </textarea>
                     </div>
@@ -82,87 +80,39 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>Parameter</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon-ok btn-icon btn-ok"></span></a></td>
-                                    <td><a href="#"><span class="btn-icon btn-cancel"><img src="/images/flag-white.png"></span></a></td>
+                                    <td class="text-left">Parameter</td>
+                                    <td colspan="2">&nbsp;</td>
+                                    <!--<td><a href="#"><span class="glyphicon glyphicon-ok btn-icon btn-ok"></span></a></td>
+                                    <td><a href="#"><span class="btn-icon btn-cancel"><img src="/images/flag-white.png"></span></a></td>-->
                                     <td><strong>Fill In if Abnormal</strong></td>
                                 </tr>
-                                <tr>
-                                    <td><strong>Voids</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-81" checked="checked"> <label for="chek-ok-81"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-81" checked="checked"> <label for="chek-fl-81"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Boat Interior</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-82" checked="checked"> <label for="chek-ok-82"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-82" checked="checked"> <label for="chek-fl-82"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Boat Exterior</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-83" checked="checked"> <label for="chek-ok-83"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-83" checked="checked"> <label for="chek-fl-83"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Pilot House</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-84" checked="checked"> <label for="chek-ok-84"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-84" checked="checked"> <label for="chek-fl-84"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Eng Room Blowers</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-85" checked="checked"> <label for="chek-ok-85"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-85" checked="checked"> <label for="chek-fl-85"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Fire Pumps</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-86" checked="checked"> <label for="chek-ok-86"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-86" checked="checked"> <label for="chek-fl-86"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Bilge Pumps</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-86" checked="checked"> <label for="chek-ok-86"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-86" checked="checked"> <label for="chek-fl-86"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Boat Exterior</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-86" checked="checked"> <label for="chek-ok-86"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-86" checked="checked"> <label for="chek-fl-86"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Battery Chargers</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-86" checked="checked"> <label for="chek-ok-86"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-86" checked="checked"> <label for="chek-fl-86"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Jet Controls</strong></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-ok" id="chek-ok-86" checked="checked"> <label for="chek-ok-86"></label></td>
-                                    <td><input type="checkbox" class="checkbox checkbox-cancel" id="chek-fl-86" checked="checked"> <label for="chek-fl-86"></label></td>
-                                    <td><input type='text' class='portlet-input portlet-input-xb' placeholder='Enter here' /></td>
-                                </tr>
+
+
+                            <tr ng-repeat="param in vm.maintenanceCriteria">
+                                   
+                                <td><strong>{{param.displayName}}</strong></td>
+                                <td><input type="radio" class="checkbox checkbox-ok" id="param-ok-{{$index}}" name="param_{{$index}}" ng-model="param.inspectionResult" ng-click="vm.onPropertyChange(param,$event)" value="true"/> <label for="param-ok-{{$index}}"></label></td>
+                                <td><input type="radio" class="checkbox checkbox-cancel" id="param-fl-{{$index}}" name="param_{{$index}}" ng-model="param.inspectionResult" ng-click="vm.onPropertyChange(param,$event)" value="false"/> <label for="param-fl-{{$index}}"></label></td>
+                                <td><input type='text' class='portlet-input portlet-input-xb' ng-model="param.comment" placeholder='Enter here'/></td>
+                            </tr>
+                                
                             </tbody>
                         </table>
                         <div class="btn-check-all_wrap">
-                            <a href="#" class="btn-check btn-ok btn-check-all">All OK</a> <a href="#" class="btn-check btn-cancel btn-check-all">All Abnormal</a>
+                            <a href="#" class="btn-check btn-ok btn-check-all" ng-click="vm.toggleProperties(true)">All OK</a> <a href="#"  ng-click="vm.toggleProperties(false)" class="btn btn-check btn-cancel btn-check-all">All Abnormal</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12 btn-save_wrap">
-                <a href="#" class="btn-save">Save Report</a>
+                <a href="#" class="btn btn-save" ng-click="vm.saveReport()">Save Report</a>
             </div>
 
         </div>
     </div>
 </section>
+
 
 
 <footer class="footer-maitenance-log col-xs-12">

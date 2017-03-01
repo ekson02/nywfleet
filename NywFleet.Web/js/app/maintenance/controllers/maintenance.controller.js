@@ -9,7 +9,6 @@
     function maintenanceController($q, logger, $stateParams, $state, maintenanceService) {
         var vm = this;
         vm.selectedVesselId = "";
-        vm.onEngineChange = onEngineChange;
         vm.messageCount = 0;
         vm.vessel = null;
         vm.abnormalConditionList = [];
@@ -17,8 +16,12 @@
         vm.engines = [];
         vm.uncheck = uncheck;
         vm.maintenance = null;
-        vm.toggleEnginProperties = toggleEnginProperties;
+        vm.onPropertyChange = onPropertyChange;
         vm.addAbnormalCondition = addAbnormalCondition;
+        vm.toggleEnginProperties = toggleEnginProperties;
+        vm.toggleProperties = toggleProperties;
+        vm.saveReport = saveReport;
+
         var engineProperties = ["oil", "coolant", "jetBearing", "jhpu", "belts"];
 
         function activate() {
@@ -31,7 +34,9 @@
 
         function getMaintenanceCriteria() {
             return maintenanceService.getMaintenanceCriteria().then(function (data) {
-                vm.maintenanceCriteria = data;
+                if (data) {
+                    vm.maintenanceCriteria = data;
+                }
                 return vm.maintenanceCriteria;
             });
         }
@@ -56,6 +61,7 @@
                     engineMaintenanceResults: [],
                     maintenanceCriteriaResults: []
                 }
+
                 for (var i = 0; i < data.vesselEngines.length; i++) {
                     var engine = data.vesselEngines[i];
                     vm.maintenance.engineMaintenanceResults.push({
@@ -63,6 +69,7 @@
                         name: engine.engine.engineName
                     });
                 }
+
                 console.log(vm.vessel);
                 console.log(vm.maintenance);
                 return vm.vessel;
@@ -73,32 +80,39 @@
             vm.maintenance.abnormalConditions += vm.selectedCondition + "; ";
             vm.selectedCondition = "";
         }
+
+        function saveReport() {
+            for (var i = 0; i < vm.maintenanceCriteria.length  ; i++) {
+                vm.maintenance.maintenanceCriteriaResults.push(vm.maintenanceCriteria[i]);
+            }
+  
+            maintenanceService.saveLog(vm.maintenance).then(function (data) {
+                $state.go("done");
+            });
+
+        }
+
         function onDataReady() {
             logger.info('Activated maintenance View');
             return true;
         }
 
-
-        function onEngineChange(engine, property, event, value) {
-            //console.log(value + " " + engine[value]);            
-            // engine[value] = !engine[value];
-            if (engine[property] == String(value)) {
-                engine[property] = null;
-            } else {
-                //engine[property] = value;
-            }
-        }
         function uncheck(engine, property, event) {
             engine.lastKnown = engine.lastKnown || {};
             if (engine.lastKnown[property] == event.target.value) {
                 engine[property] = null;
             }
             engine.lastKnown[property] = engine[property];
+        }
 
+        function onPropertyChange(prop, event) {
+            if (prop.lastKnownResult == event.target.value) {
+                prop.inspectionResult = null;
+            }
+            prop.lastKnownResult = prop.inspectionResult;
         }
 
         function toggleEnginProperties(engine, value) {
-
             for (var i = 0; i < engineProperties.length; i++) {
                 var property = engineProperties[i];
                 engine[property] = value;
@@ -108,6 +122,15 @@
                 engine.lastKnown[property] = value;
             }
         }
+
+        function toggleProperties(value) {
+            for (var i = 0; i < vm.maintenanceCriteria.length; i++) {
+                var criteria = vm.maintenanceCriteria[i];
+                criteria.inspectionResult = value.toString();
+                criteria.lastKnownResult = value.toString();
+            }
+        }
+
 
         activate();
     }

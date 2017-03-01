@@ -5,7 +5,7 @@ body { background-color: #fafafa; }
 .reset-padding-left { padding-left: 0 !important; }
 .reset-padding-right { padding-right: 0 !important; }
 .reset-padding { padding-left: 0 !important; padding-right: 0 !important; }
-.btn:hover { background-color: #006687 !important; }
+.btn:hover { background-color: #007ac2 !important;color: white }
 .alert { margin: 30px auto; padding: 30px !important; }
 .alert-danger { background-color: rgba(240,65,36,.85); }
 .img-responsive { width: 100%; height: auto; }

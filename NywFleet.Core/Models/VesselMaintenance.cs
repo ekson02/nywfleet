@@ -15,10 +15,10 @@ namespace NywFleet.Core.Models
         public int VesselId { get; set; }
         public string UsersId { get; set; }
         public System.DateTime MaintenanceDate { get; set; }
-        public long StartHours { get; set; }
-        public long EndHours { get; set; }
-        public long StartFuel { get; set; }
-        public long EndFuel { get; set; }
+        public long? StartHours { get; set; }
+        public long? EndHours { get; set; }
+        public long? StartFuel { get; set; }
+        public long? EndFuel { get; set; }
         public string AbnormalConditions { get; set; }
        
         public  ICollection<EngineMaintenanceResult> EngineMaintenanceResults { get; set; }

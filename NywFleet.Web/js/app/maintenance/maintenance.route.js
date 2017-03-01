@@ -40,7 +40,21 @@
                         }
                     }
                 }
+            },
+            {
+                state: "done",
+                config: {
+                    url: "/done",
+                    views: {
+                        'mainContent': {
+                            templateUrl: "/js/app/maintenance/templates/done.html",
+                            controller: "ThankYouController",
+                            controllerAs: "vm"
+                        }
+                    }
+                }
             }
+
            
         ];
     }
