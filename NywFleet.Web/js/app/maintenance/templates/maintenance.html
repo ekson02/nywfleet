@@ -1,9 +1,4 @@
-<header class='col-md-12 reset-padding'>
-    <div class='top-bar top-bar-img col-md-12'>
-        <a href="#"><img src="/images/maitenance-logo.png"></a>
-        <h2 class='header-maitenance'>MAINTENANCE LOG</h2>
-    </div>
-</header>
+
 
 <section class='col-md-12 reset-padding wrap'>
     <div class="container">
@@ -28,8 +23,8 @@
                         <h1><img src="/images/start-end-ico.png">Starting/Ending Hours</h1>
                     </div>
                     <div class="portlet-content portlet-pad">
-                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.startHours" placeholder='Enter Starting Hrs. Here' />
-                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.endHours" placeholder='Enter Ending  Hrs. Here' />
+                        <input type="number" class='portlet-input portlet-input-bg' ng-model="vm.maintenance.startHours" placeholder='Enter Starting Hrs. Here' />
+                        <input type="number" class='portlet-input portlet-input-bg' ng-model="vm.maintenance.endHours" placeholder='Enter Ending  Hrs. Here' />
                     </div>
                 </div>
             </div>
@@ -40,8 +35,8 @@
                         <h1><img src="/images/fuel-icon.png">Fuel <span>(Gallons)</span> </h1>
                     </div>
                     <div class="portlet-content portlet-pad">
-                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.startFuel" placeholder='Enter Starting Volume Here' />
-                        <input type='text' class='portlet-input portlet-input-bg' ng-model="vm.maintenance.endFuel" placeholder='Enter Ending  Volume Here' />
+                        <input type="number" class='portlet-input portlet-input-bg' ng-model="vm.maintenance.startFuel" placeholder='Enter Starting Volume Here' />
+                        <input type="number" class='portlet-input portlet-input-bg' ng-model="vm.maintenance.endFuel" placeholder='Enter Ending  Volume Here' />
                     </div>
                 </div>
             </div>
@@ -82,24 +77,22 @@
                                 <tr>
                                     <td class="text-left">Parameter</td>
                                     <td colspan="2">&nbsp;</td>
-                                    <!--<td><a href="#"><span class="glyphicon glyphicon-ok btn-icon btn-ok"></span></a></td>
-                                    <td><a href="#"><span class="btn-icon btn-cancel"><img src="/images/flag-white.png"></span></a></td>-->
                                     <td><strong>Fill In if Abnormal</strong></td>
                                 </tr>
 
 
-                            <tr ng-repeat="param in vm.maintenanceCriteria">
-                                   
-                                <td><strong>{{param.displayName}}</strong></td>
-                                <td><input type="radio" class="checkbox checkbox-ok" id="param-ok-{{$index}}" name="param_{{$index}}" ng-model="param.inspectionResult" ng-click="vm.onPropertyChange(param,$event)" value="true"/> <label for="param-ok-{{$index}}"></label></td>
-                                <td><input type="radio" class="checkbox checkbox-cancel" id="param-fl-{{$index}}" name="param_{{$index}}" ng-model="param.inspectionResult" ng-click="vm.onPropertyChange(param,$event)" value="false"/> <label for="param-fl-{{$index}}"></label></td>
-                                <td><input type='text' class='portlet-input portlet-input-xb' ng-model="param.comment" placeholder='Enter here'/></td>
-                            </tr>
-                                
+                                <tr ng-repeat="param in vm.maintenanceCriteria">
+
+                                    <td><strong>{{param.displayName}}</strong></td>
+                                    <td><input type="radio" class="checkbox checkbox-ok" id="param-ok-{{$index}}" name="param_{{$index}}" ng-model="param.inspectionResult" ng-click="vm.onPropertyChange(param,$event)" value="true" /> <label for="param-ok-{{$index}}"></label></td>
+                                    <td><input type="radio" class="checkbox checkbox-cancel" id="param-fl-{{$index}}" name="param_{{$index}}" ng-model="param.inspectionResult" ng-click="vm.onPropertyChange(param,$event)" value="false" /> <label for="param-fl-{{$index}}"></label></td>
+                                    <td><input type="text" class='portlet-input portlet-input-xb' ng-model="param.comment" placeholder='Enter here' /></td>
+                                </tr>
+
                             </tbody>
                         </table>
                         <div class="btn-check-all_wrap">
-                            <a href="#" class="btn-check btn-ok btn-check-all" ng-click="vm.toggleProperties(true)">All OK</a> <a href="#"  ng-click="vm.toggleProperties(false)" class="btn btn-check btn-cancel btn-check-all">All Abnormal</a>
+                            <a href="#" class="btn-check btn-ok btn-check-all" ng-click="vm.toggleProperties(true)">All OK</a> <a href="#" ng-click="vm.toggleProperties(false)" class="btn btn-check btn-cancel btn-check-all">All Abnormal</a>
                         </div>
                     </div>
                 </div>

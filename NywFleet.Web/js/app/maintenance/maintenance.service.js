@@ -3,18 +3,21 @@
     angular.module("app.maintenance")
         .factory("maintenanceService", maintenanceService);
 
-    maintenanceService.$inject = ["$http", "config", "exception"];
-    function maintenanceService($http, config, exception) {
+    maintenanceService.$inject = ["$http", "config", "exception", "utilityService"];
+    function maintenanceService($http, config, exception, utilityService) {
         var service = {
             getAllVessels: getAllVessels,
             getAllVesselById: getAllVesselById,
             getMaintenanceCriteria: getMaintenanceCriteria,
             getAbnormalConditions: getAbnormalConditions,
-            saveLog: saveLog
+            saveLog: saveLog,
+            setVesselName: setVesselName,
+            getVesselName: getVesselName
         }
         return service;
         ///----
 
+        var vesselName = "";
         function getAllVessels() {
             return $http.get(config.apiUrl + "vessels/").then(function (response) {
                 return success(response);
@@ -31,6 +34,15 @@
                 return success(response);
             }).catch(fail);
         };
+
+        function setVesselName(name) {
+            utilityService.$broadcast("vessel.name.change", name);
+            vesselName = name;
+        }
+
+        function getVesselName() {
+            return vesselName;
+        }
 
 
         function getAbnormalConditions() {

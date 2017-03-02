@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
 body { background-color: #fafafa; }
 .panel-primary>.panel-heading{ background-color: #007ac2; background-image: none}
-
+.btn-primary{background-image: none}
 .reset-padding-left { padding-left: 0 !important; }
 .reset-padding-right { padding-right: 0 !important; }
 .reset-padding { padding-left: 0 !important; padding-right: 0 !important; }
@@ -16,9 +16,16 @@ body { background-color: #fafafa; }
 .login-page .form-group { margin-bottom: 25px; }
 .login-page .btn-primary { background-color: #007ac3; font-weight: bold; padding: 10px 50px; font-size: 18px; border: none; }
 /* Select Vessel Page */
-.top-bar { background-color: #000000; padding: 8px 12px; color: #fff; height: 35px; }
-.top-bar a { color: #fff; }
-.left-arrow { font-size: 7px; padding: 0 6px; }
+.top-bar { background-color: #051c35; padding: 8px 12px; color: #fff; height: 56px;line-height: 40px  }
+.top-bar a, #view .navbar a { color: #fff; }
+.top-bar img { max-height: 40px }
+ .navbar-brand img{ margin-top:  -6px!important }
+ #view .navbar.navbar-inverse{background-color: #051c35!important;border-radius: 0; background-image: none }
+
+ #view .navbar .nav>li {line-height: 40px }
+ .back-button{    height: 70px;display: block!important;line-height: 40px!important;}
+ 
+ .left-arrow { font-size: 7px; padding: 0 6px; }
 .navbar-default { background-color: #eeeae7; background-image: none; }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover { background-color: #fff; background-image: none; box-shadow: none; }
 .notif { display: inline-block; padding: 0px 7px; vertical-align: baseline; color: #fff; font-weight: bold; font-size: 12px; border-radius: 10px; }
@@ -48,7 +55,7 @@ body { background-color: #fafafa; }
 .btn-cancel { background-color: #d11502; color: #fff; }
 .portlet-content { padding: 0; }
 .portlet-content table { width: 100%; }
-.portlet-content td { padding: 8px 20px; vertical-align: baseline; }
+.portlet-content td { padding: 8px; vertical-align: baseline; }
 .portlet-content tr { border-bottom: 1px solid #dddddd; }
 .portlet-content td:first-child { padding: 12px 0; text-align: right; color: #434a54; }
 
@@ -95,7 +102,7 @@ label:hover:before { border: 1px solid #ccc; }
 .btn.btn-ok:hover { background-color: #5a9c12!important; }
 .engine-temp-header_wrap { padding: 10px; text-align: center; color: #fff; background-color: #9ea7b4; }
 .engine-temp-header_wrap h2 { color: #fff; font-size: 15px; font-weight: bold; margin: 0; margin-bottom: 5px; }
-.portlet-input { border: 1px solid #aab2bd; border-radius: 5px; padding: 7px; color: #999999; }
+.portlet-input { border: 1px solid #aab2bd; border-radius: 5px; padding: 7px; color: #000000; }
 .portlet-input-sm { max-width: 100px; }
 .engine-temp-table tr { border-bottom: none; }
 .sep-section { margin: 50px auto; height: 1px; background-color: #e1e1e1; border: none !important; width: 100%; clear: both; float: left; }

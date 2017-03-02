@@ -1,11 +1,12 @@
+
 <div class="container">
     <div class="row">
-        <div class="col-sm-4 col-xs-6 vessel-wrap" ng-repeat="vessel in vm.vessels">
-            <div class="vessel-box selection" ng-click="vm.selectVessel(vessel)" >
+        <div class="col-sm-3 col-xs-6 vessel-wrap" ng-repeat="vessel in vm.vessels">
+            <div class="vessel-box selection" ng-click="vm.selectVessel(vessel)">
                 <div class="verssel-header">
                     <h1>{{vessel.vesselName}}</h1>
                 </div>
-                <div class="vessel-content">                    
+                <div class="vessel-content">
                     <img ng-src="{{'/images/vessels/' + (vessel.imageUrl || 'vessel-img.jpg')}}">
                 </div>
             </div>

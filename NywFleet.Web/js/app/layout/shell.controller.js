@@ -14,6 +14,7 @@
         vm.toggleMenu = toggleMenu;
         vm.showMenu = false;
         vm.selectedMenuItem = null;
+        vm.today = new Date();
 
         $rootScope.showSplash = true;
 
@@ -44,6 +45,11 @@
             }
             vm.bodyClass = "page";
         });
+
+        $scope.$on("vessel.name.change", function (event, data) {
+            vm.vesselName = data;
+        });
+
 
 
     }

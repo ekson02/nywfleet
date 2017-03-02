@@ -11,7 +11,7 @@ using NywFleet.Web.Models.Identity;
 
 namespace NywFleet.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "admin")]
     public class RolesAdminController : Controller
     {
         public RolesAdminController()

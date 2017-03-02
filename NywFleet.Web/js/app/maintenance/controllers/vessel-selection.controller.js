@@ -30,6 +30,7 @@
 
         function selectVessel(vessel) {
             if (vessel) {
+                
                 $state.go("maintenance", { vesselId: vessel.vesselId });
             }
         }

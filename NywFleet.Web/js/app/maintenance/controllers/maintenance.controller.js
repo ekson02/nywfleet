@@ -21,6 +21,7 @@
         vm.toggleEnginProperties = toggleEnginProperties;
         vm.toggleProperties = toggleProperties;
         vm.saveReport = saveReport;
+        vm.today = new Date();
 
         var engineProperties = ["oil", "coolant", "jetBearing", "jhpu", "belts"];
 
@@ -55,6 +56,7 @@
         function getVesselInfo() {
             return maintenanceService.getAllVesselById(vm.selectedVesselId).then(function (data) {
                 vm.vessel = data;
+                maintenanceService.setVesselName(data.vesselName);
                 vm.maintenance = {
                     vesselId: data.vesselId,
                     abnormalConditions: "",

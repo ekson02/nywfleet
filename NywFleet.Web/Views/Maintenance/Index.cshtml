@@ -16,23 +16,49 @@
 
 </head>
 
-<body>
-    @*<header ng-show="shell.bodyClass=='page'">
-            <a href="/" class='logo-link'> <img src="/images/5q-logo.png" alt='5Q'></a>
-        </header>*@
-    <header>
-        <div class='top-bar'>
-            <div class='pull-left '>
-                <a href="#"><span class="glyphicon glyphicon-home"></span></a>
-                <span class='left-arrow'> > </span>
-                <a href="/maintenance">Vessels</a>
-            </div>
-            <div class='pull-right'>
-                <a href="#"><span class="glyphicon glyphicon-log-out"></span></a>
-            </div>
-        </div>
-    </header>
+<body ng-controller="ShellController as shell">
 
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"})) {
+    @Html.AntiForgeryToken()
+    <div id="view" ng-cloak>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" src="/images/maitenance-logo.png">
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/maintenance" class="back-button">
+                                <div>
+                                    <span class="glyphicon glyphicon-chevron-left"></span> Back to vessels
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-show="!!shell.vesselName"><a href=""><strong>{{shell.vesselName}}</strong>  <div class="text-muted">vessel</div></a></li>
+                        <li><a href=""><strong>{{shell.today|date}}</strong>  <div class="text-muted"> date </div></a></li>
+                        <li><a href=""><strong>@User.Identity.GetUserName()</strong>  <div class="text-muted"> captain</div></a></li>
+                        <li>
+                            
+                                <a href="javascript:document.getElementById('logoutForm').submit()"><strong> Log off &nbsp; <span class="glyphicon glyphicon-log-out"></span></strong></a>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+                            }
 
     <div ui-view name="mainContent"></div>
 
@@ -47,6 +73,7 @@
     <script src="~/Scripts/angular-sanitize.js"></script>
     <script src="~/js/app/common/exception/exception.module.js"></script>
     <script src="~/js/app/common/exception/exception.js"></script>
+
     <script src="~/js/app/common/exception/exception-handler.provider.js"></script>
     <script src="~/js/app/common/logger/logger.module.js"></script>
     <script src="~/js/app/common/logger/logger.js"></script>
@@ -57,7 +84,7 @@
     <script src="~/js/app/core/config.js"></script>
     <script src="~/js/app/core/constants.js"></script>
     <script src="~/js/app/core/core.route.js"></script>
-
+    <script src="~/js/app/core/services/utility.service.js"></script>
     <script src="~/js/app/maintenance/maintenance.module.js"></script>
     <script src="~/js/app/maintenance/controllers/vessel-selection.controller.js"></script>
     <script src="~/js/app/maintenance/controllers/maintenance.controller.js"></script>

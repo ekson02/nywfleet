@@ -13,45 +13,46 @@
 </head>
 <body>
 
-    <header class='col-md-12 reset-padding'>
-        <div class='top-bar col-md-12'>
-            <div class='pull-left'>
-                <a href="#"><span class="glyphicon glyphicon-home"></span></a>
-                <span class='left-arrow'> > </span>
-                <a href="/maintenance">Vessels</a>
-            </div>
-            <div class='pull-right'>
-                <a href="#"><span class="glyphicon glyphicon-log-out"></span></a>
-            </div>
-        </div>
-
-
-        <div class='col-md-12 reset-padding'>
-            <nav class="navbar navbar-default">
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+        @Html.AntiForgeryToken()
+        <div id="view" ng-cloak>
+            <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><img src="/images/logo-lf.png"></a>
+                        <a class="navbar-brand" href="#">
+                            <img alt="Brand" src="/images/maitenance-logo.png">
+                        </a>
                     </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class='active'><a href="/maintenance">Home</a></li>
-                            <li><a href="/maintenance">Vessels <span class='notif notif-red'>12</span></a></li>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/maintenance" class="back-button">
+                                    <div>
+                                        <span class="glyphicon glyphicon-chevron-left"></span> Back to vessels
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <li>
+
+                                <a href="javascript:document.getElementById('logoutForm').submit()"><strong> Log off &nbsp; <span class="glyphicon glyphicon-log-out"></span></strong></a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </div>
-    </header>
-
+    }
     <div class="container body-content">
         @RenderBody()
     </div>

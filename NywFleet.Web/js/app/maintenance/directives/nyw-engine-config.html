@@ -14,7 +14,7 @@
                     <td><a href="#"><span class="btn-icon btn-cancel"><img src="/images/flag-white.png"></span></a></td>
                 </tr>-->
                 <tr>
-                    <td><strong>Engine Oil</strong></td>
+                    <td ><strong>Engine Oil</strong></td>
                     <td><input type="radio" class="checkbox checkbox-ok" id="oil-ok-{{$index}}" name="oil_{{$index}}" ng-model="engine.oil" ng-click="vm.uncheck(engine,'oil',$event)" value="true" /> <label for="oil-ok-{{$index}}"></label></td>
                     <td><input type="radio" class="checkbox checkbox-cancel" id="oil-fl-{{$index}}" name="oil_{{$index}}" ng-model="engine.oil" ng-click="vm.uncheck(engine,'oil',$event)" value="false" /> <label for="oil-fl-{{$index}}"></label></td>
 
@@ -56,15 +56,15 @@
             <tbody>
                 <tr>
                     <td><strong>Eng Coolant Temp.</strong></td>
-                    <td><input type='text' ng-model="engine.coolantTemp" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
+                    <td><input type="number" ng-model="engine.coolantTemp" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
                 </tr>
                 <tr>
                     <td><strong>Oil Press. Idle</strong></td>
-                    <td><input type='text' ng-model="engine.oilPressureIdle" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
+                    <td><input type="number" ng-model="engine.oilPressureIdle" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
                 </tr>
                 <tr>
                     <td><strong>Oil Press. Normal</strong></td>
-                    <td><input type='text' ng-model="engine.oilPressureNormal" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
+                    <td><input type="number" ng-model="engine.oilPressureNormal" class='portlet-input portlet-input-sm' placeholder='Enter here' /></td>
                 </tr>
             </tbody>
         </table>

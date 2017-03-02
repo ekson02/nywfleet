@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using NywFleet.Web.Models.Identity;
 
 namespace NywFleet.Web.Areas.Admin.Controllers {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "admin")]
     public class UsersAdminController : Controller {
         public UsersAdminController() {
         }
@@ -70,7 +70,12 @@ namespace NywFleet.Web.Areas.Admin.Controllers {
         [HttpPost]
         public async Task<ActionResult> Create(RegisterViewModel userViewModel, params string[] selectedRoles) {
             if (ModelState.IsValid) {
-                var user = new ApplicationUser { UserName = userViewModel.Email, Email = userViewModel.Email };
+                var user = new ApplicationUser {
+                    UserName = userViewModel.Email,
+                    Email = userViewModel.Email,
+                    FirstName = userViewModel.FirstName,
+                    LastName = userViewModel.LastName,
+                };
                 var adminresult = await UserManager.CreateAsync(user, userViewModel.Password);
 
                 //Add User to the selected Roles 
