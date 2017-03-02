@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
 body { background-color: #fafafa; }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 .panel-primary>.panel-heading{ background-color: #007ac2; background-image: none}
 .btn-primary{background-image: none}
 .reset-padding-left { padding-left: 0 !important; }
